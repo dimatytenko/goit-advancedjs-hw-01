@@ -40,6 +40,9 @@ function onFormSubmit(event) {
 
 function onSaveInputsValue(event) {
   const form = event.currentTarget;
+  if (!form?.elements) {
+    return;
+  }
   const {
     elements: { email, message },
   } = form;
