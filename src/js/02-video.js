@@ -6,9 +6,7 @@ import { timeUpdateHandler, getLocalStorageTime } from './functions.js';
 
 const player = new Player(refs.playerRef);
 
-player.on('play', () => {
-  const currentTime = getLocalStorageTime();
-  player.setCurrentTime(currentTime || 0);
-});
+const currentTime = getLocalStorageTime();
+player.setCurrentTime(currentTime || 0);
 
 player.on('timeupdate', throttle(timeUpdateHandler, 1000));
